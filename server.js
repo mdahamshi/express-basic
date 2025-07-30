@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { initExpressApp } from './expressInit.js';
+import registerRoutes from './routes/index.js';
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Initialize express settings and middleware
 initExpressApp(app);
+registerRoutes(app);
 
 // Routes
 app.get('/', (req, res) => {
